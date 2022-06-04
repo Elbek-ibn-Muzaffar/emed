@@ -1,18 +1,29 @@
 package com.juniper.emed.payload;
 
+import com.sun.istack.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.omg.CORBA.PRIVATE_MEMBER;
 
 import java.util.Set;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class UserDto {
 
+    @NotNull
     private String name;
 
+    @NotNull
     private String password;
 
+    @NotNull
     private String phone;
 
-    private Set<RoleDto> roles;
+    @NotNull
+    private Long roleId;
 }
