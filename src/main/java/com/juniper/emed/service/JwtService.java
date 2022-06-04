@@ -31,7 +31,7 @@ public class JwtService {
     public AuthResponce createToken(AuthRequest authRequest) throws Exception {
         try {
             authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(authRequest.getName(), authRequest.getPassword())
+                    new UsernamePasswordAuthenticationToken(authRequest.getPhone(), authRequest.getPassword())
             );
 
 
@@ -43,7 +43,7 @@ public class JwtService {
             throw new Exception("Hechnarsa topilmadi", e);
         }
 
-        final UserDetails userDetails = userDetailsService.loadUserByUsername(authRequest.getName());
+        final UserDetails userDetails = userDetailsService.loadUserByUsername(authRequest.getPhone());
 
         final String jwt = jwtUtils.generateToken(userDetails);
 

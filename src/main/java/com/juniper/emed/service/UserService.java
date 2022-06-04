@@ -23,7 +23,7 @@ public class UserService {
     //saving user
     public String saveUser(UserDto userDto)
     {
-        if (!userRepository.existsByName(userDto.getName()))
+        if (!userRepository.existsByPhone(userDto.getPhone()))
         {
             userDto.setPassword(passwordEncoder.encode(userDto.getPassword()));
             userRepository.save(modelMapper.map(userDto, Users.class));
