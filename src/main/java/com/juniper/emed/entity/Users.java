@@ -17,7 +17,7 @@ import java.util.Set;
 public class Users implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @NotNull
     private String name;
@@ -27,6 +27,7 @@ public class Users implements Serializable {
 
     @NotNull
     private String phone;
+
 
     //    @Transient
     @ManyToMany(fetch = FetchType.EAGER)

@@ -1,6 +1,7 @@
 package com.juniper.emed.payload;
 
 import lombok.Data;
+import org.omg.CORBA.PRIVATE_MEMBER;
 
 import java.util.Set;
 
@@ -12,5 +13,6 @@ public class UserDto {
     private String password;
 
     private String phone;
+
     private Set<RoleDto> roles;
 }
