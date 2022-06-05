@@ -29,7 +29,7 @@ public class CaseCategoryController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity save(@RequestBody CaseCategory caseCategory)
+    public ResponseEntity saveCaseCategory(@RequestBody CaseCategory caseCategory)
     {
         return ResponseEntity.ok(caseCategoryService.save(caseCategory));
     }
