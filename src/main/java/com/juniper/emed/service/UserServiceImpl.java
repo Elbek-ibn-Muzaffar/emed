@@ -30,18 +30,17 @@ public class UserServiceImpl implements UserService{
 
     //saving user
     @Override
-    public String saveUser(UserDto userDto) {
+    public Users saveUser(UserDto userDto) {
         if (!userRepository.existsByPhone(userDto.getPhone()))
         {
             Users users = modelMapper.map(userDto, Users.class);
             Set<Roles> roles=new HashSet<>();
             roles.add(roleRepository.findById(userDto.getRoleId()).get());
             users.setRoles(roles);
-            userRepository.save(users);
-            return "Saqlandi";
+            return userRepository.save(users);
         }
 
-        return "Bu User mavjud";
+        return new Users();
     }
 
 }
