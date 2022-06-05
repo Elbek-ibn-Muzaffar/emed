@@ -7,8 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
 public class CaseCategoryServiceImpl implements CaseCategoryService{
-    @Autowired
+
     private CaseCategoryRepository caseCategoryRepository;
+
+    public CaseCategoryServiceImpl(CaseCategoryRepository caseCategoryRepository) {
+        this.caseCategoryRepository = caseCategoryRepository;
+    }
 
     @Override
     public List<CaseCategory> getAll() {

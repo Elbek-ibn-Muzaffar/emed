@@ -13,8 +13,11 @@ import java.util.List;
 @RequestMapping("/api/v1/case-category")
 public class CaseCategoryController {
 
-    @Autowired
     private CaseCategoryService caseCategoryService;
+
+    public CaseCategoryController(CaseCategoryService caseCategoryService) {
+        this.caseCategoryService = caseCategoryService;
+    }
 
     @GetMapping("/get-all")
     public ResponseEntity<List<CaseCategory>> getAllCategory()
