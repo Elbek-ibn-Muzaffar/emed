@@ -22,7 +22,7 @@ public class Calls {
 
     private String location;
 
-    @ManyToMany
+    @ManyToOne
     private Deseases deseases;
 
     @ManyToOne
