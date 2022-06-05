@@ -9,7 +9,6 @@ import com.juniper.emed.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 
@@ -21,8 +20,6 @@ public class DataLoader implements CommandLineRunner {
     UserRepository userRepository;
     @Autowired
     RoleRepository roleRepository;
-    @Autowired
-    PasswordEncoder passwordEncoder;
 
 
     @Value("${spring.sql.init.mode}")
@@ -38,7 +35,7 @@ public class DataLoader implements CommandLineRunner {
             Users users=new Users();
             users.setName("Elbek");
             users.setPhone("931788058");
-            users.setPassword(passwordEncoder.encode("112233"));
+            users.setPassword("112233");
             users.setRoles(roleRepository.findAllByName("ROLE_ADMIN"));
 
             userRepository.save(users);

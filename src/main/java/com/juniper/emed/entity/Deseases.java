@@ -27,8 +27,6 @@ public class Deseases {
     @ManyToOne
     private CaseCategory caseCategory;
 
-    @CreatedBy
-    private String createdUsersId;
 
     @CreatedDate
     private Date date= new Date();

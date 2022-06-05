@@ -8,7 +8,7 @@ import com.juniper.emed.repository.RoleRepository;
 import com.juniper.emed.repository.UserRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
+
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -26,15 +26,13 @@ public class UserServiceImpl implements UserService{
 
     ModelMapper modelMapper=new ModelMapper();
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+
 
     //saving user
     @Override
     public String saveUser(UserDto userDto) {
         if (!userRepository.existsByPhone(userDto.getPhone()))
         {
-            userDto.setPassword(passwordEncoder.encode(userDto.getPassword()));
             Users users = modelMapper.map(userDto, Users.class);
             Set<Roles> roles=new HashSet<>();
             roles.add(roleRepository.findById(userDto.getRoleId()).get());
