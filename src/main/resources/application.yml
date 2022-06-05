@@ -3,12 +3,12 @@ server:
 
 spring:
   datasource:
-    #    url: jdbc:postgresql://ec2-44-195-186-235.compute-1.amazonaws.com:5432/d8io75ausm21nl
-    #    username: xjqxqlojopahdf
-    #    password: 8d3f6be2d1c7901ddd1150182ee36f46581d43bf4c11287b0f0ff5e6f45738fb
-    url: jdbc:postgresql://localhost:5432/emedDb
-    username: postgres
-    password: 123
+        url: jdbc:postgresql://ec2-3-211-221-185.compute-1.amazonaws.com:5432/ec2-3-211-221-185.compute-1.amazonaws.com
+        username: tvhehdotmodqmb
+        password: 01a89603b1fa319b24b1b79905cad82cd68f0c20697cffe6ce4e1272b51845cc
+#    url: jdbc:postgresql://localhost:5432/emedDb
+#    username: postgres
+#    password: 123
 
   jpa:
     properties:
@@ -18,7 +18,7 @@ spring:
       ddl-auto: update
   sql:
     init:
-      mode: never
+      mode: always
 
   springdoc:
     version: '@springdoc.version@'
