@@ -25,11 +25,12 @@ public class Deseases {
     private String nameUk;
 
     @ManyToOne
-    private DeseaseCategories deseaseCategories;
+    private CaseCategory caseCategory;
 
     @CreatedBy
     private String createdUsersId;
 
     @CreatedDate
     private Date date= new Date();
+
 }

@@ -50,7 +50,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .requestMatchers(CorsUtils:: isPreFlightRequest).permitAll()
 
                 .mvcMatchers("/api/v1/admin/**").hasRole("ADMIN")
-                .mvcMatchers("/api/v1/user/register").permitAll()
+                .mvcMatchers("/api/v1/customer/register").permitAll()
+                .mvcMatchers("/api/v1/customer/**").hasRole("CUSTOMER")
                 .mvcMatchers("/api/v1/roles/saveRole").permitAll()
                 .mvcMatchers("/api/v1/login").permitAll()
                 .and()

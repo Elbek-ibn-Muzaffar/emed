@@ -35,7 +35,6 @@ public class DataLoader implements CommandLineRunner {
             roles.setName("ROLE_ADMIN");
             roleRepository.save(roles);
 
-
             Users users=new Users();
             users.setName("Elbek");
             users.setPhone("931788058");
