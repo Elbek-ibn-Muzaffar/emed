@@ -34,9 +34,9 @@ public class UserServiceImpl implements UserService{
         if (!userRepository.existsByPhone(userDto.getPhone()))
         {
             Users users = modelMapper.map(userDto, Users.class);
-            Set<Roles> roles=new HashSet<>();
-            roles.add(roleRepository.findById(userDto.getRoleId()).get());
-            users.setRoles(roles);
+
+
+            users.setRoles(roleRepository.findAllByName(userDto.getRoleName()));
             return userRepository.save(users);
         }
 
