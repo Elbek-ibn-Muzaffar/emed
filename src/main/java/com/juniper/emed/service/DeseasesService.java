@@ -1,12 +1,13 @@
 package com.juniper.emed.service;
 
 import com.juniper.emed.entity.Deseases;
+import com.juniper.emed.payload.DeseaseDto;
 
 import java.util.List;
 
 public interface DeseasesService {
 
-    Deseases save(Deseases deseases);
+    Deseases save(DeseaseDto deseases);
 
     Deseases getOne(Long id);
 

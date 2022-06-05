@@ -1,7 +1,10 @@
 package com.juniper.emed.service;
 
 import com.juniper.emed.entity.Deseases;
+import com.juniper.emed.payload.DeseaseDto;
+import com.juniper.emed.repository.CaseCategoryRepository;
 import com.juniper.emed.repository.DeseasesRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,9 +15,15 @@ public class DeseaseServiceImpl implements DeseasesService {
     @Autowired
     private DeseasesRepository deseasesRepository;
 
+    @Autowired
+    private CaseCategoryRepository caseCategoryRepository;
+
     @Override
-    public Deseases save(Deseases deseases) {
-        return deseasesRepository.save(deseases);
+    public Deseases save(DeseaseDto deseases) {
+        ModelMapper modelMapper=new ModelMapper();
+        Deseases deseases1=modelMapper.map(deseases,Deseases.class);
+        deseases1.setCaseCategory(caseCategoryRepository.findById(deseases.getCategoryId()).get());
+        return deseasesRepository.save(deseases1);
     }
 
     @Override

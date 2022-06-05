@@ -38,9 +38,8 @@ public class DeseaseController {
     @PostMapping("/save")
     public ResponseEntity saveDesease(@RequestBody DeseaseDto deseases)
     {
-        ModelMapper modelMapper=new ModelMapper();
-        Deseases deseases1=modelMapper.map(deseases,Deseases.class);
-        return ResponseEntity.ok(deseasesService.save(deseases1));
+
+        return ResponseEntity.ok(deseasesService.save(deseases));
     }
 
     @DeleteMapping("/delete-all")
