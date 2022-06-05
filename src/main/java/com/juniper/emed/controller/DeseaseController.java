@@ -1,7 +1,9 @@
 package com.juniper.emed.controller;
 
 import com.juniper.emed.entity.Deseases;
+import com.juniper.emed.payload.DeseaseDto;
 import com.juniper.emed.service.DeseasesService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -34,8 +36,10 @@ public class DeseaseController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity saveDesease(@RequestBody Deseases deseases)
+    public ResponseEntity saveDesease(@RequestBody DeseaseDto deseases)
     {
-        return ResponseEntity.ok(deseasesService.save(deseases));
+        ModelMapper modelMapper=new ModelMapper();
+        Deseases deseases1=modelMapper.map(deseases,Deseases.class);
+        return ResponseEntity.ok(deseasesService.save(deseases1));
     }
 }
