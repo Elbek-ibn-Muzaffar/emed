@@ -3,9 +3,11 @@ package com.juniper.emed.service;
 import com.juniper.emed.entity.CaseCategory;
 import com.juniper.emed.repository.CaseCategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CaseCategoryServiceImpl implements CaseCategoryService{
 
     private CaseCategoryRepository caseCategoryRepository;
