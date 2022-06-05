@@ -48,4 +48,13 @@ public class UserServiceImpl implements UserService{
     public List<Users> getAll() {
         return userRepository.findAll();
     }
+
+    @Override
+    public Users findById(Long id) {
+        if (userRepository.existsById(id))
+        {
+            return userRepository.findById(id).get();
+        }
+        return new Users();
+    }
 }

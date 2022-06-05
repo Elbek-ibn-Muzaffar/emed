@@ -9,4 +9,6 @@ public interface UserService {
     Users saveUser(UserDto userDto);
 
     List<Users> getAll();
+
+    Users findById(Long id);
 }
