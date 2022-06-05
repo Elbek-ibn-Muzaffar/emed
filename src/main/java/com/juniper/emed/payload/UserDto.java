@@ -24,5 +24,5 @@ public class UserDto {
     private String phone;
 
     @NotNull
-    private Long roleId;
+    private String roleName;
 }
