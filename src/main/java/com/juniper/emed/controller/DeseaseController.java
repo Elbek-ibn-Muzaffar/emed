@@ -42,4 +42,10 @@ public class DeseaseController {
         Deseases deseases1=modelMapper.map(deseases,Deseases.class);
         return ResponseEntity.ok(deseasesService.save(deseases1));
     }
+
+    @DeleteMapping("/delete-all")
+    public ResponseEntity deleteAllDeseases()
+    {
+        return ResponseEntity.ok(deseasesService.deleteAll());
+    }
 }

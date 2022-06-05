@@ -35,4 +35,10 @@ public class DeseaseServiceImpl implements DeseasesService {
     public List<Deseases> getByCategoryId(Long categoryId) {
         return deseasesRepository.findAllByCaseCategoryId(categoryId);
     }
+
+    @Override
+    public String deleteAll() {
+        deseasesRepository.deleteAll();
+        return "O'chirildi";
+    }
 }

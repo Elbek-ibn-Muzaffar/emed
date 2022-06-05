@@ -13,4 +13,6 @@ public interface DeseasesService {
     List<Deseases> getAll();
 
     List<Deseases> getByCategoryId(Long categoryId);
+
+    String deleteAll();
 }
