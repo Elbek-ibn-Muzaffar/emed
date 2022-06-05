@@ -17,7 +17,7 @@ public class CallsDto {
 
     private String location;
 
-    private String deseasesId;
+    private Long deseasesId;
 
     private Long callsCategoryId;
 
